@@ -150,7 +150,8 @@ public class Sort {
         //QuickSort(a, 0, a.length - 1);
         //sort(a);
         //selectTest(a);
-        InsertSort(a);
+        //InsertSort(a);
+        shellSort(a);
 
         for (int i : a) {
             System.out.println(i);
