@@ -44,7 +44,32 @@ public class Sort {
     /**
      * 希尔排序
      * 划分为小的子序列，然后进行插入排序
+     *
      * */
+    public static void shellSort(int[] array){
+        //希尔排序
+        int gap = array.length;
+        while (true) {
+            //增量每次减半
+            gap /= 2;
+            for (int i = 0; i < gap; i++) {
+                //将特定步长的当作一组进行排序
+                for (int j = i + gap; j < array.length; j += gap) {
+                    //这个循环里其实就是一个插入排序
+                    int temp = array[j];
+                    int k = j - gap;
+                    while (k >= 0 && array[k] > temp) {
+                        array[k + gap] = array[k];
+                        k -= gap;
+                    }
+                    array[k + gap] = temp;
+                }
+            }
+            if (gap == 1) {
+                break;
+            }
+        }
+    }
 
 
     public static void InsertSort(int[] a) {
@@ -52,7 +77,7 @@ public class Sort {
             for (int i = 1; i < a.length; i++) {
                 int temp = a[i], j = i;
                 while (j >= 1 && a[j - 1] > temp) {
-                    //数组前移，继续找到合适的位置
+                    //坐标前移，继续找到合适的位置
                     a[j] = a[j - 1];
                     --j;
                 }
@@ -125,6 +150,7 @@ public class Sort {
         //QuickSort(a, 0, a.length - 1);
         //sort(a);
         //selectTest(a);
+        InsertSort(a);
 
         for (int i : a) {
             System.out.println(i);
