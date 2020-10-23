@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="sort" />
         <module name="bit_operation" />
+        <module name="binary_tree" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="14" />

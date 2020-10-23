@@ -11,6 +11,7 @@
     <modules>
         <module>sort</module>
         <module>bit_operation</module>
+        <module>binary_tree</module>
     </modules>
 
 
