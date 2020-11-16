@@ -1,11 +1,10 @@
 import java.util.Random;
 
-import static java.util.Arrays.sort;
-
 /**
  * @author ylqq
  */
 public class Sort {
+    //选择排序
     public static void selectTest(int[] a) {
         int i;
         int j;
@@ -140,21 +139,26 @@ public class Sort {
 
         //新建一个随机数组测试
         Random random=new Random();
-        int[] a = new int[100];
+        int[] a = new int[1000];
         for (int i = 0; i < a.length; i++) {
             int num=random.nextInt();
             a[i]=num;
         }
+
+        long begin=System.currentTimeMillis();
+        selectTest(a);
+        long end=System.currentTimeMillis();
+        System.out.println("执行时间为："+(end-begin)+"ms");
 
         //BubbleSort(a);
         //QuickSort(a, 0, a.length - 1);
         //sort(a);
         //selectTest(a);
         //InsertSort(a);
-        shellSort(a);
+        //shellSort(a);
 
-        for (int i : a) {
+        /*for (int i : a) {
             System.out.println(i);
-        }
+        }*/
     }
 }
