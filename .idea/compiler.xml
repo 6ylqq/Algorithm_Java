@@ -9,7 +9,9 @@
         <module name="Array" />
         <module name="sort" />
         <module name="binary_tree" />
+        <module name="String" />
         <module name="bit_operation" />
+        <module name="LeetCode" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="14" />

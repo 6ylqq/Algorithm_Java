@@ -13,6 +13,8 @@
         <module>bit_operation</module>
         <module>binary_tree</module>
         <module>Array</module>
+        <module>LeetCode</module>
+        <module>String</module>
     </modules>
     <build>
         <plugins>
@@ -26,4 +28,12 @@
             </plugin>
         </plugins>
     </build>
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 </project>
