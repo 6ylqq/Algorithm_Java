@@ -15,6 +15,7 @@
         <module>Array</module>
         <module>LeetCode</module>
         <module>String</module>
+        <module>SortToOffer</module>
     </modules>
     <build>
         <plugins>

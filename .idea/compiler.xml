@@ -7,13 +7,16 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Array" />
+        <module name="bit_operation" />
         <module name="sort" />
         <module name="binary_tree" />
         <module name="String" />
-        <module name="bit_operation" />
+        <module name="SortToOffer" />
         <module name="LeetCode" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="14" />
+    <bytecodeTargetLevel target="14">
+      <module name="剑指offer" target="14" />
+    </bytecodeTargetLevel>
   </component>
 </project>
