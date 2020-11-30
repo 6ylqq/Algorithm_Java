@@ -21,9 +21,23 @@ public class MaxSubArray {
         return nAll;
     }
 
+    public int maxSubArrayGreedy(int[] nums){
+        if (nums==null||nums.length==0){
+            return 0;
+        }
+        int max=nums[0];
+        int preNums=nums[0];
+        for (int i = 1; i < nums.length-1; i++) {
+            preNums=preNums>preNums+nums[i]? nums[i]:preNums+nums[i];
+            max=Math.max(preNums,max);
+        }
+        return max;
+
+    }
+
     @Test
     public void test(){
-        int[] arr={1,-2,4,8,-4,7,-1,5};
+        int[] arr={1,2};
         System.out.println(maxSubArray(arr));
     }
 
