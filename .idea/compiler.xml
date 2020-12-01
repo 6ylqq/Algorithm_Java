@@ -13,9 +13,11 @@
         <module name="String" />
         <module name="SortToOffer" />
         <module name="LeetCode" />
+        <module name="DisignPattern" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="14">
+      <module name="DesignPattern" target="1.5" />
       <module name="剑指offer" target="14" />
     </bytecodeTargetLevel>
   </component>

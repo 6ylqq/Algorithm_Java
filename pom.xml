@@ -16,6 +16,7 @@
         <module>LeetCode</module>
         <module>String</module>
         <module>SortToOffer</module>
+        <module>DisignPattern</module>
     </modules>
     <build>
         <plugins>
