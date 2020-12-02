@@ -63,4 +63,18 @@ class MaxProfit {
  * @author ylqq
  */
 public class Greedy {
+    /**
+     * 判断是否为子序列
+     * */
+    public boolean isSubsequence(String s, String t){
+        int i = 0;
+        int j=0;
+        while ( i < s.toCharArray().length&&j<t.toCharArray().length) {
+            if (s.toCharArray()[i]==t.toCharArray()[j]){
+                i++;
+            }
+            j++;
+        }
+        return i==s.toCharArray().length;
+    }
 }
