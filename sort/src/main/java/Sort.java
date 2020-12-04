@@ -33,7 +33,7 @@ public class Sort {
     /**
      * 归并排序
      */
-    public static void Merge(int[] array, int p, int q, int r) {
+    public static void merge(int[] array, int p, int q, int r) {
         int j, k, n1, n2;
         n1 = p - q + 1;
 
@@ -43,12 +43,11 @@ public class Sort {
     /**
      * 希尔排序
      * 划分为小的子序列，然后进行插入排序
-     *
-     * */
-    public static void shellSort(int[] array){
+     */
+    public static void shellSort(int[] array) {
         //希尔排序
         int gap = array.length;
-        while (true) {
+        do {
             //增量每次减半
             gap /= 2;
             for (int i = 0; i < gap; i++) {
@@ -64,10 +63,7 @@ public class Sort {
                     array[k + gap] = temp;
                 }
             }
-            if (gap == 1) {
-                break;
-            }
-        }
+        } while (gap != 1);
     }
 
 
@@ -113,11 +109,11 @@ public class Sort {
         //设置基准
         index = array[i];
         while (i != j) {
-            //往右找，直到找到比index小的
+            //从右往左找，直到找到比index小的
             while (array[j] >= index && i < j) {
                 j--;
             }
-            //往左找，找到比index大的
+            //从左往右找，找到比index大的
             while (array[i] <= index && i < j) {
                 i++;
             }
@@ -138,17 +134,17 @@ public class Sort {
     public static void main(String[] args) {
 
         //新建一个随机数组测试
-        Random random=new Random();
+        Random random = new Random();
         int[] a = new int[1000];
         for (int i = 0; i < a.length; i++) {
-            int num=random.nextInt();
-            a[i]=num;
+            int num = random.nextInt();
+            a[i] = num;
         }
 
-        long begin=System.currentTimeMillis();
+        long begin = System.currentTimeMillis();
         selectTest(a);
-        long end=System.currentTimeMillis();
-        System.out.println("执行时间为："+(end-begin)+"ms");
+        long end = System.currentTimeMillis();
+        System.out.println("执行时间为：" + (end - begin) + "ms");
 
         //BubbleSort(a);
         //QuickSort(a, 0, a.length - 1);

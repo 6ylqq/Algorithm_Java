@@ -3,7 +3,7 @@ package SimpleFactoryPattern;
 /**
  * @author ylqq
  */
-public class Circle implements Shape{
+public class Circle implements Shape {
     /**
      * 创建一个接口
      */

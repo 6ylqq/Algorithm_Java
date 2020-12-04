@@ -3,7 +3,7 @@ package SimpleFactoryPattern;
 /**
  * @author ylqq
  */
-public class Rectangle implements Shape{
+public class Rectangle implements Shape {
     /**
      * 创建一个接口
      */

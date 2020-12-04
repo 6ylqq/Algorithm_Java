@@ -1,29 +1,30 @@
 import java.util.Random;
 
-class ReConstructBinaryTree{
-    public Node reConstructBinaryTree(int[] pre,int[] in){
-        int r=pre.length-1;
-        Node root=buildTree(pre,in,0,r,0,r);
+class ReConstructBinaryTree {
+    public Node reConstructBinaryTree(int[] pre, int[] in) {
+        int r = pre.length - 1;
+        Node root = buildTree(pre, in, 0, r, 0, r);
         return root;
     }
-    public Node buildTree(int[] pre,int[] in,int la,int ra,int lb,int rb){
-        if (la>ra||lb>rb){
+
+    public Node buildTree(int[] pre, int[] in, int la, int ra, int lb, int rb) {
+        if (la > ra || lb > rb) {
             return null;
         }
         //先序第一个是根节点
-        int rt=pre[la];
-        Node root=new Node(rt);
+        int rt = pre[la];
+        Node root = new Node(rt);
 
         //跟节点在中序遍历中的位置
-        int load=lb;
-        while (in[load]!=rt&&load<rb){
+        int load = lb;
+        while (in[load] != rt && load < rb) {
             load++;
         }
 
         //左字数节点数
-        int num=load-lb;
-        root.left=buildTree(pre, in, la+1, la+num, lb, load-1);
-        root.right=buildTree(pre, in, la+num+1, ra, load+1, rb);
+        int num = load - lb;
+        root.left = buildTree(pre, in, la + 1, la + num, lb, load - 1);
+        root.right = buildTree(pre, in, la + num + 1, ra, load + 1, rb);
         return root;
 
     }
