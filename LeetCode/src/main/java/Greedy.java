@@ -1,4 +1,30 @@
 class MaxProfit {
+
+    /**
+     * leetcode605种花
+     */
+    public boolean canPlaceFlowers(int[] flowerbed, int n) {
+        if (flowerbed.length == 0) {
+            return false;
+        }
+        int count = 0;
+        for (int i = 0; i < flowerbed.length; i++) {
+            if (flowerbed[i] == 1) {
+                continue;
+            }
+            int pre = i == 0 ? 0 : flowerbed[i - 1];
+            int next = i == flowerbed.length - 1 ? flowerbed.length - 1 : flowerbed[i + 1];
+            if (pre == 0 && next == 0) {
+                count++;
+                flowerbed[i] = 1;
+            }
+
+        }
+
+        return count >= n;
+
+    }
+
     /**
      * 一次股票交易包含买入和卖出，只进行一次交易，求最大收益。
      */
@@ -63,6 +89,12 @@ class MaxProfit {
  * @author ylqq
  */
 public class Greedy {
+
+    public static void main(String[] args) {
+        Greedy greedy = new Greedy();
+        int[] nums = {1, 1};
+        greedy.nextPermutation(nums);
+    }
     /**
      * 判断是否为子序列
      */
@@ -77,4 +109,41 @@ public class Greedy {
         }
         return i == s.toCharArray().length;
     }
+
+    /**
+     * leetcode31 实现获取 下一个排列 的函数，算法需要将给定数字序列重新排列成字典序中下一个更大的排列。
+     * 如果不存在下一个更大的排列，则将数字重新排列成最小的排列（即升序排列）。
+     * 必须 原地 修改，只允许使用额外常数空间。
+     */
+    public void nextPermutation(int[] nums) {
+        for (int i = nums.length - 1, j = nums.length - 2; i >= 0 && j >= 0; ) {
+            if (nums[i] > nums[j]) {
+                swap(nums, i, j);
+                return;
+            } else {
+                j--;
+            }
+            if (j < 0) {
+                i--;
+                j=i-1;
+            }
+        }
+        reserve(nums);
+    }
+
+    private void swap(int[] nums, int i, int j) {
+        int temp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = temp;
+    }
+
+    public void reserve( int[] arr ){
+        int i=0,j=arr.length-1;
+        while(i!=j){
+            swap(arr,i,j);
+            ++i;
+            --j;
+        }
+    }
+
 }

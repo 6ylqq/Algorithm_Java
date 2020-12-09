@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Queue;
 
 /**
+ * 广度优先遍历
  * @author ylqq
  */
 public class BFS {
@@ -60,5 +61,8 @@ public class BFS {
         }
         return root.val;
     }
+
+
+
 
 }

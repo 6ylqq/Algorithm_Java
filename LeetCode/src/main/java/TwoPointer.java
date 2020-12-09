@@ -1,5 +1,6 @@
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -107,7 +108,28 @@ class LongestWord {
 public class TwoPointer {
     public static void main(String[] args) {
         TwoPointer twoPointer = new TwoPointer();
+        int[]a={-2147483648,1};
+        int[]b={2147483647,0};
+        System.out.println(twoPointer.smallestDifference(a,b));
+    }
 
+    /**
+     * 给定两个整数数组a和b，计算具有最小差绝对值的一对数值（每个数组中取一个值），并返回该对数值的差
+     * */
+    public int smallestDifference(int[] a, int[] b) {
+        long min=Integer.MAX_VALUE;
+        Arrays.sort(a);
+        Arrays.sort(b);
+        int i = 0, j = 0;
+        while (i<a.length&&j<b.length) {
+            min=Math.min(Math.abs((long)a[i] - (long)b[j]),min);
+            if (a[i]<b[j]){
+                i++;
+            }else{
+                j++;
+            }
+        }
+        return (int) min;
     }
 
     /**
