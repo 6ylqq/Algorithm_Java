@@ -64,6 +64,9 @@ public class BinaryTree {
 
     }
 
+    /**
+     * 二叉查找树的插入
+     * */
     public void insert(int data) {
         Node newNode = new Node(data);
         if (root == null) {

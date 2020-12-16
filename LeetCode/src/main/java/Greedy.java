@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 class MaxProfit {
 
     /**
@@ -92,7 +94,7 @@ public class Greedy {
 
     public static void main(String[] args) {
         Greedy greedy = new Greedy();
-        int[] nums = {1, 1};
+        int[] nums = {2,2,7,5,4,3,2,2,1};
         greedy.nextPermutation(nums);
     }
     /**
@@ -119,6 +121,9 @@ public class Greedy {
         for (int i = nums.length - 1, j = nums.length - 2; i >= 0 && j >= 0; ) {
             if (nums[i] > nums[j]) {
                 swap(nums, i, j);
+                if (nums[i]==nums[0]){
+                    Arrays.sort(nums,j+1,nums.length);
+                }
                 return;
             } else {
                 j--;
@@ -139,11 +144,12 @@ public class Greedy {
 
     public void reserve( int[] arr ){
         int i=0,j=arr.length-1;
-        while(i!=j){
+        do{
             swap(arr,i,j);
             ++i;
             --j;
-        }
+        }while(i!=j&&i<arr.length&&j>0);
     }
+
 
 }
