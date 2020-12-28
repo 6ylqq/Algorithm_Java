@@ -35,6 +35,16 @@ class ReConstructBinaryTree {
  */
 public class BinaryTree {
     private Node root;
+    /**
+     * leetcode 110
+     * 给定一个二叉树，判断它是否是高度平衡的二叉树。
+     */
+    private boolean result = true;
+    /**
+     * leetcode 543
+     * 给定一棵二叉树，你需要计算它的直径长度。一棵二叉树的直径长度是任意两个结点路径长度中的最大值。这条路径可能穿过也可能不穿过根结点。
+     */
+    private int max;
 
     public BinaryTree() {
         root = null;
@@ -66,7 +76,7 @@ public class BinaryTree {
 
     /**
      * 二叉查找树的插入
-     * */
+     */
     public void insert(int data) {
         Node newNode = new Node(data);
         if (root == null) {
@@ -138,4 +148,39 @@ public class BinaryTree {
         this.postOrder(this.root);
     }
 
+    public boolean isBalanced(Node root) {
+        return result;
+    }
+
+    public int maxDepth(Node root) {
+        if (root == null) {
+            return 0;
+        }
+        int l = maxDepth(root.left);
+        int r = maxDepth(root.right);
+        if (Math.abs(l - r) > 1) {
+            result = false;
+        }
+        return Math.max(l, r) + 1;
+    }
+
+    public int diameterOfBinaryTree(Node root) {
+        depth(root);
+        return max;
+    }
+
+    private int depth(Node root) {
+        if (root == null) {
+            return 0;
+        }
+        int l = depth(root.left);
+        int r = depth(root.right);
+        max = Math.max(max, l + r);
+        return Math.max(l, r) + 1;
+    }
+
 }
+
+
+
+

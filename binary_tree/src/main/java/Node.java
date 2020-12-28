@@ -1,3 +1,5 @@
+
+
 /**
  * @author ylqq
  */
@@ -11,4 +13,10 @@ public class Node {
         this.left = null;
         this.right = null;
     }
+
+    public Node(int val, Node left, Node right) {
+          this.data = val;
+          this.left = left;
+          this.right = right;
+      }
 }
